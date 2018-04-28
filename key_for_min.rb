@@ -6,9 +6,13 @@ def key_for_min_value(name_hash)
   minkey = ""
   if name_hash.empty?
     return nil
-  elsif value < minvalue
-    minkey = key
-    minvalue = value
+  else
+    name_hash.each do |key,value|
+      if value < minvalue
+        minkey = key
+        minvalue = value
+      end
+    end
   end
   minkey
 end
